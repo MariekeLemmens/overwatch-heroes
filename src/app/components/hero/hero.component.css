@@ -1,0 +1,21 @@
+.hero {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  background: rgba(11, 13, 18, 0.75);
+  color: #fafafa;
+  height: 125px;
+  width: 200px;
+  align-items: center;
+}
+
+#hero-image{
+  padding: 5px;
+  height: auto;
+  width: 50%;
+  justify-self: right;
+}
+
+#hero-details {
+  padding: 5px;
+}

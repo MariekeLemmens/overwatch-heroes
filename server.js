@@ -1,13 +1,8 @@
-"use strict";
 //Install express server
-let express = require('express');
-let path = require('path');
+const express = require('express');
+const path = require('path');
 
-let app = express();
-
-app.get('/*', function(req,res) {
-  res.sendFile(path.join(__dirname+'/dist/index.html'));
-});
+const app = express();
 
 // Serve only the static files form the dist directory
 app.use(express.static('/dist/starstruck'));

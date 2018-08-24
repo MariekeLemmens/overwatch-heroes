@@ -155,7 +155,7 @@ module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 22
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}} ({{hero.name}})</div>\n    <div id=\"hero-description\">{{hero.description}}</div>\n  </div>\n</div>\n"
+module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}} - ({{hero.name}})</div>\n    <div id=\"hero-description\">{{hero.description}}</div>\n  </div>\n</div>\n"
 
 /***/ }),
 

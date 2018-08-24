@@ -1,15 +1,15 @@
-const path = require('path');
 const express = require('express');
-const port = process.env.PORT || 8081;
+const path = require('path');
+
 const app = express();
 
-process.env.PWD = process.cwd();
+// Serve only the static files form the dist directory
+app.use(express.static('./dist/starstruck'));
 
-app.use(express.static(process.env.PWD + '/build'));
+app.get('/*', function(req,res) {
 
-app.get('*', function (req, res) {
-  const index = path.join(__dirname, 'build', 'index.html');
-  res.sendFile(index);
+  res.sendFile(path.join(__dirname,'/dist/starstruck/index.html'));
 });
 
-app.listen(port);
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);

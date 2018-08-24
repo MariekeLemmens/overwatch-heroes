@@ -96,13 +96,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _components_heroes_heroes_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/heroes/heroes.component */ "./src/app/components/heroes/heroes.component.ts");
 /* harmony import */ var _components_hero_hero_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/hero/hero.component */ "./src/app/components/hero/hero.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _components_hero_detail_hero_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/hero-detail/hero-detail.component */ "./src/app/components/hero-detail/hero-detail.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -117,17 +119,87 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
                 _components_heroes_heroes_component__WEBPACK_IMPORTED_MODULE_3__["HeroesComponent"],
-                _components_hero_hero_component__WEBPACK_IMPORTED_MODULE_4__["HeroComponent"]
+                _components_hero_hero_component__WEBPACK_IMPORTED_MODULE_4__["HeroComponent"],
+                _components_hero_detail_hero_detail_component__WEBPACK_IMPORTED_MODULE_5__["HeroDetailComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"]
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/hero-detail/hero-detail.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/hero-detail/hero-detail.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 220px;\r\n}\r\n\r\n#arrow-up {\r\n  width: 0;\r\n  height: 0;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 10px solid rgba(11, 13, 18, 0.75);\r\n}\r\n\r\n#hero-detail {\r\n  height: 50px;\r\n  background: rgba(11, 13, 18, 0.75);\r\n  color: #fafafa;\r\n  padding: 10px;\r\n\r\n}\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/hero-detail/hero-detail.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/hero-detail/hero-detail.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}}</div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/hero-detail/hero-detail.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/hero-detail/hero-detail.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: HeroDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroDetailComponent", function() { return HeroDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hero */ "./src/app/hero.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HeroDetailComponent = /** @class */ (function () {
+    function HeroDetailComponent() {
+    }
+    HeroDetailComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", _hero__WEBPACK_IMPORTED_MODULE_1__["Hero"])
+    ], HeroDetailComponent.prototype, "hero", void 0);
+    HeroDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'hero-detail',
+            template: __webpack_require__(/*! ./hero-detail.component.html */ "./src/app/components/hero-detail/hero-detail.component.html"),
+            styles: [__webpack_require__(/*! ./hero-detail.component.css */ "./src/app/components/hero-detail/hero-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HeroDetailComponent);
+    return HeroDetailComponent;
 }());
 
 
@@ -152,7 +224,7 @@ module.exports = ".hero {\r\n  display: flex;\r\n  margin: 10px;\r\n  padding: 1
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"hero\">\r\n  <img id=\"hero-image\" src=\"{{hero.image}}\" alt=\"hero-icon\">\r\n  <div id=\"hero-details\">\r\n    <div>{{hero.name}}</div>\r\n    <div>Age: {{hero.age}}</div>\r\n  </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"hero\">\r\n  <img id=\"hero-image\" src=\"{{hero.image}}\" alt=\"hero-icon\">\r\n  <div id=\"hero-details\">\r\n    <div>{{hero.name}}</div>\r\n    <div>Age: {{hero.age}}</div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -181,16 +253,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 var HeroComponent = /** @class */ (function () {
     function HeroComponent() {
+        this.heroSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
     HeroComponent.prototype.ngOnInit = function () {
     };
     HeroComponent.prototype.onClick = function () {
-        console.log(this.hero.name + " clicked");
+        this.heroSelected.emit(this.hero.id);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", _hero__WEBPACK_IMPORTED_MODULE_1__["Hero"])
     ], HeroComponent.prototype, "hero", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"])
+    ], HeroComponent.prototype, "heroSelected", void 0);
     HeroComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'hero',
@@ -225,7 +302,7 @@ module.exports = ".heroes {\r\n  list-style: none;\r\n  display: inline-flex;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"heroes\">\n  <li *ngFor=\"let hero of heroes\" class=\"hero\">\n    <hero [hero]=\"hero\"></hero>\n    <br>\n  </li>\n</ul>\n"
+module.exports = "<ul class=\"heroes\">\n  <li *ngFor=\"let hero of heroes\" class=\"hero\">\n    <hero [hero]=\"hero\" (heroSelected)=\"heroSelectedHandler($event)\"></hero>\n    <hero-detail [hero]=\"hero\" *ngIf=\"hero.id==selectedHeroId\"></hero-detail>\n  </li>\n</ul>\n"
 
 /***/ }),
 
@@ -282,6 +359,10 @@ var HeroesComponent = /** @class */ (function () {
             return 0;
         }
         this.heroes.sort(compare);
+    };
+    HeroesComponent.prototype.heroSelectedHandler = function (heroId) {
+        this.selectedHeroId = heroId;
+        console.log(heroId);
     };
     HeroesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

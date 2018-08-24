@@ -1,0 +1,22 @@
+#hero-container {
+  margin: -10px 10px 10px;
+  width: 220px;
+}
+
+#arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid rgba(11, 13, 18, 0.75);
+}
+
+#hero-detail {
+  height: 50px;
+  background: rgba(11, 13, 18, 0.75);
+  color: #fafafa;
+  padding: 10px;
+
+}
+
+

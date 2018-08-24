@@ -9,6 +9,7 @@ import {Hero} from "../../hero";
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
+  selectedHeroId: number;
 
   constructor(private heroService: HeroService) {
   }
@@ -33,8 +34,8 @@ export class HeroesComponent implements OnInit {
     }
   }
 
-  sortHeroes(){
-    function compare(a,b) {
+  sortHeroes() {
+    function compare(a, b) {
       if (a.name < b.name)
         return -1;
       if (a.name > b.name)
@@ -43,5 +44,10 @@ export class HeroesComponent implements OnInit {
     }
 
     this.heroes.sort(compare);
+  }
+
+  heroSelectedHandler(heroId: number) {
+    this.selectedHeroId = heroId;
+    console.log(heroId)
   }
 }

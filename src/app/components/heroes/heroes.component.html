@@ -1,6 +1,6 @@
 <ul class="heroes">
   <li *ngFor="let hero of heroes" class="hero">
-    <hero [hero]="hero"></hero>
-    <br>
+    <hero [hero]="hero" (heroSelected)="heroSelectedHandler($event)"></hero>
+    <hero-detail [hero]="hero" *ngIf="hero.id==selectedHeroId"></hero-detail>
   </li>
 </ul>

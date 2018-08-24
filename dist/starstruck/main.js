@@ -144,7 +144,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 220px;\r\n}\r\n\r\n#arrow-up {\r\n  width: 0;\r\n  height: 0;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 10px solid rgba(11, 13, 18, 0.75);\r\n}\r\n\r\n#hero-detail {\r\n  height: 50px;\r\n  background: rgba(11, 13, 18, 0.75);\r\n  color: #fafafa;\r\n  padding: 10px;\r\n\r\n}\r\n\r\n\r\n"
+module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 220px;\r\n}\r\n\r\n#arrow-up {\r\n  width: 0;\r\n  height: 0;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 10px solid rgba(11, 13, 18, 0.75);\r\n}\r\n\r\n#hero-detail {\r\n  background: rgba(11, 13, 18, 0.75);\r\n  color: #fafafa;\r\n  padding: 10px;\r\n}\r\n\r\n#hero-description{\r\n  font-size: 75%;\r\n}\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -155,7 +155,7 @@ module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 22
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}}</div>\n  </div>\n</div>\n"
+module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}}</div>\n    <div id=\"hero-description\">{{hero.description}}</div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -361,8 +361,12 @@ var HeroesComponent = /** @class */ (function () {
         this.heroes.sort(compare);
     };
     HeroesComponent.prototype.heroSelectedHandler = function (heroId) {
-        this.selectedHeroId = heroId;
-        console.log(heroId);
+        if (this.selectedHeroId == heroId) {
+            this.selectedHeroId = null;
+        }
+        else {
+            this.selectedHeroId = heroId;
+        }
     };
     HeroesComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

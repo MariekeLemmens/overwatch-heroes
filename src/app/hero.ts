@@ -3,5 +3,6 @@ export class Hero {
   name: string;
   real_name: string;
   age: number;
-  image:string;
+  image: string;
+  description: string;
 }

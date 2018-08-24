@@ -12,11 +12,13 @@
 }
 
 #hero-detail {
-  height: 50px;
   background: rgba(11, 13, 18, 0.75);
   color: #fafafa;
   padding: 10px;
+}
 
+#hero-description{
+  font-size: 75%;
 }
 
 

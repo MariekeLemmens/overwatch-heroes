@@ -47,7 +47,10 @@ export class HeroesComponent implements OnInit {
   }
 
   heroSelectedHandler(heroId: number) {
-    this.selectedHeroId = heroId;
-    console.log(heroId)
+    if (this.selectedHeroId == heroId) {
+      this.selectedHeroId = null;
+    } else {
+      this.selectedHeroId = heroId;
+    }
   }
 }

@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="app">
   <div class="banner">
-    <img id="logo" src="http://www.stickpng.com/assets/images/586273b931349e0568ad89df.png" alt="logo">
-    <h1>
+    <img (click)="goToHome()" id="logo" src="http://www.stickpng.com/assets/images/586273b931349e0568ad89df.png" alt="logo" class="home-button">
+    <h1 (click)="goToHome()" class="home-button">
       {{ title }}
     </h1>
   </div>
-  <app-heroes></app-heroes>
+  <router-outlet></router-outlet>
 </div>
 

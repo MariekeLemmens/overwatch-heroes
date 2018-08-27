@@ -25,3 +25,7 @@
   height: auto;
   width: auto;
 }
+
+.home-button:hover{
+  cursor: pointer;
+}

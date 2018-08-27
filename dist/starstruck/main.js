@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app {\r\n  position: relative;\r\n  height: 100vh;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n\r\n.banner {\r\n  height: 60px;\r\n  display: flex;\r\n  background: rgba(11, 13, 18, 0.8);\r\n  color: #fafafa;\r\n  text-align: center;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n\r\n#logo {\r\n  padding: 5px;\r\n  max-width:75%;\r\n  max-height:75%;\r\n  height: auto;\r\n  width: auto;\r\n}\r\n"
+module.exports = ".app {\r\n  position: relative;\r\n  height: 100vh;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n\r\n.banner {\r\n  height: 60px;\r\n  display: flex;\r\n  background: rgba(11, 13, 18, 0.8);\r\n  color: #fafafa;\r\n  text-align: center;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 10px;\r\n}\r\n\r\n#logo {\r\n  padding: 5px;\r\n  max-width:75%;\r\n  max-height:75%;\r\n  height: auto;\r\n  width: auto;\r\n}\r\n\r\n.home-button:hover{\r\n  cursor: pointer;\r\n}\r\n"
 
 /***/ }),
 
@@ -41,7 +41,7 @@ module.exports = ".app {\r\n  position: relative;\r\n  height: 100vh;\r\n  top: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div class=\"app\">\n  <div class=\"banner\">\n    <img id=\"logo\" src=\"http://www.stickpng.com/assets/images/586273b931349e0568ad89df.png\" alt=\"logo\">\n    <h1>\n      {{ title }}\n    </h1>\n  </div>\n  <app-heroes></app-heroes>\n</div>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div class=\"app\">\n  <div class=\"banner\">\n    <img (click)=\"goToHome()\" id=\"logo\" src=\"http://www.stickpng.com/assets/images/586273b931349e0568ad89df.png\" alt=\"logo\" class=\"home-button\">\n    <h1 (click)=\"goToHome()\" class=\"home-button\">\n      {{ title }}\n    </h1>\n  </div>\n  <router-outlet></router-outlet>\n</div>\n\n"
 
 /***/ }),
 
@@ -56,23 +56,33 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(router) {
+        this.router = router;
         this.title = 'Overwatch Heroes';
     }
+    AppComponent.prototype.goToHome = function () {
+        this.router.navigateByUrl('');
+    };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
-        })
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -98,6 +108,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_hero_hero_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/hero/hero.component */ "./src/app/components/hero/hero.component.ts");
 /* harmony import */ var _components_hero_detail_hero_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/hero-detail/hero-detail.component */ "./src/app/components/hero-detail/hero-detail.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _components_hero_page_hero_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/hero-page/hero-page.component */ "./src/app/components/hero-page/hero-page.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -111,6 +123,18 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+var appRoutes = [
+    {
+        path: '',
+        component: _components_heroes_heroes_component__WEBPACK_IMPORTED_MODULE_3__["HeroesComponent"]
+    },
+    {
+        path: 'hero/:id',
+        component: _components_hero_page_hero_page_component__WEBPACK_IMPORTED_MODULE_8__["HeroPageComponent"]
+    },
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -120,12 +144,15 @@ var AppModule = /** @class */ (function () {
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
                 _components_heroes_heroes_component__WEBPACK_IMPORTED_MODULE_3__["HeroesComponent"],
                 _components_hero_hero_component__WEBPACK_IMPORTED_MODULE_4__["HeroComponent"],
-                _components_hero_detail_hero_detail_component__WEBPACK_IMPORTED_MODULE_5__["HeroDetailComponent"]
+                _components_hero_detail_hero_detail_component__WEBPACK_IMPORTED_MODULE_5__["HeroDetailComponent"],
+                _components_hero_page_hero_page_component__WEBPACK_IMPORTED_MODULE_8__["HeroPageComponent"]
             ],
             imports: [
+                _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(appRoutes),
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
             ],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"]],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
@@ -144,7 +171,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 220px;\r\n}\r\n\r\n#arrow-up {\r\n  width: 0;\r\n  height: 0;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 10px solid rgba(11, 13, 18, 0.75);\r\n}\r\n\r\n#hero-detail {\r\n  background: rgba(11, 13, 18, 0.75);\r\n  color: #fafafa;\r\n  padding: 10px;\r\n}\r\n\r\n#hero-description{\r\n  font-size: 75%;\r\n}\r\n\r\n\r\n"
+module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 220px;\r\n}\r\n\r\n#arrow-up {\r\n  width: 0;\r\n  height: 0;\r\n  border-left: 7px solid transparent;\r\n  border-right: 7px solid transparent;\r\n  border-bottom: 10px solid rgba(11, 13, 18, 0.75);\r\n}\r\n\r\n#hero-detail {\r\n  background: rgba(11, 13, 18, 0.75);\r\n  color: #fafafa;\r\n  padding: 10px;\r\n}\r\n\r\n#hero-description{\r\n  font-size: 75%;\r\n}\r\n\r\n.button {\r\n  background-color: #fa9c1e; /* Green */\r\n  border: none;\r\n  color: white;\r\n  padding: 8px 8px;\r\n  text-align: center;\r\n  text-decoration: none;\r\n  display: inline-block;\r\n  margin: 5px 0;\r\n  font-size: 75%;\r\n  -ms-grid-column-align: right;\r\n      justify-self: right;\r\n}\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -155,7 +182,7 @@ module.exports = "#hero-container {\r\n  margin: -10px 10px 10px;\r\n  width: 22
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}} ({{hero.name}})</div>\n    <div id=\"hero-description\">{{hero.description}}</div>\n  </div>\n</div>\n"
+module.exports = "<div id=\"hero-container\">\n  <div id=\"arrow-up\"></div>\n  <div id=\"hero-detail\">\n    <div>{{hero.real_name}} ({{hero.name}})</div>\n    <div id=\"hero-description\">{{hero.description}}</div>\n    <button class=\"button\" (click)=\"infoClicked(hero.id)\">info</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -171,6 +198,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroDetailComponent", function() { return HeroDetailComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hero */ "./src/app/hero.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -182,10 +210,15 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
+
 var HeroDetailComponent = /** @class */ (function () {
-    function HeroDetailComponent() {
+    function HeroDetailComponent(router) {
+        this.router = router;
     }
     HeroDetailComponent.prototype.ngOnInit = function () {
+    };
+    HeroDetailComponent.prototype.infoClicked = function (id) {
+        this.router.navigateByUrl('/hero/' + id);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -197,9 +230,83 @@ var HeroDetailComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./hero-detail.component.html */ "./src/app/components/hero-detail/hero-detail.component.html"),
             styles: [__webpack_require__(/*! ./hero-detail.component.css */ "./src/app/components/hero-detail/hero-detail.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], HeroDetailComponent);
     return HeroDetailComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/hero-page/hero-page.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/hero-page/hero-page.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/hero-page/hero-page.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/hero-page/hero-page.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div>{{hero.name}}</div>\n<div>{{hero.description}}</div>\n<div>{{hero.role.name}}</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/hero-page/hero-page.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/hero-page/hero-page.component.ts ***!
+  \*************************************************************/
+/*! exports provided: HeroPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeroPageComponent", function() { return HeroPageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _hero_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hero.service */ "./src/app/hero.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var HeroPageComponent = /** @class */ (function () {
+    function HeroPageComponent(route, heroService) {
+        this.route = route;
+        this.heroService = heroService;
+    }
+    HeroPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var id = this.route.snapshot.params.id;
+        this.heroService.getHero(id).then(function (resp) {
+            _this.hero = resp;
+        });
+    };
+    HeroPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-hero-page',
+            template: __webpack_require__(/*! ./hero-page.component.html */ "./src/app/components/hero-page/hero-page.component.html"),
+            styles: [__webpack_require__(/*! ./hero-page.component.css */ "./src/app/components/hero-page/hero-page.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _hero_service__WEBPACK_IMPORTED_MODULE_2__["HeroService"]])
+    ], HeroPageComponent);
+    return HeroPageComponent;
 }());
 
 
@@ -252,6 +359,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var HeroComponent = /** @class */ (function () {
+    // hero:Hero
     function HeroComponent() {
         this.heroSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
     }
@@ -416,35 +524,11 @@ var HeroService = /** @class */ (function () {
         return this.http
             .get('https://overwatch-api.net/api/v1/hero')
             .toPromise();
-        /*return [
-          {name: 'Lucio', class: 'Support'},
-          {name: 'Ana', class: 'Support'},
-          {name: 'Mercy', class: 'Support'},
-          {name: 'Bischuitta', class: 'Support'},
-          {name: 'Zenyatta', class: 'Support'},
-          {name: 'Moira', class: 'Support'},
-          {name: 'Reinhardt', class: 'Tank'},
-          {name: 'Zarya', class: 'Tank'},
-          {name: 'Roadhog', class: 'Tank'},
-          {name: 'Orisa', class: 'Tank'},
-          {name: 'D.va', class: 'Tank'},
-          {name: 'Winston', class: 'Tank'},
-          {name: 'Bastion', class: 'Damage'},
-          {name: 'Doomfist', class: 'Damage'},
-          {name: 'Genji', class: 'Damage'},
-          {name: 'Hanzo', class: 'Damage'},
-          {name: 'Junkrat', class: 'Damage'},
-          {name: 'Mccree', class: 'Damage'},
-          {name: 'Mei', class: 'Damage'},
-          {name: 'Phara', class: 'Damage'},
-          {name: 'Reaper', class: 'Damage'},
-          {name: 'Soldier', class: 'Damage'},
-          {name: 'Sombra', class: 'Damage'},
-          {name: 'Symmetra', class: 'Damage'},
-          {name: 'Toblerone', class: 'Damage'},
-          {name: 'Tracer', class: 'Damage'},
-          {name: 'Widowmaker', class: 'Damage'},
-        ]*/
+    };
+    HeroService.prototype.getHero = function (id) {
+        return this.http
+            .get('https://overwatch-api.net/api/v1/hero/' + id)
+            .toPromise();
     };
     HeroService.getHeroImages = function () {
         return [

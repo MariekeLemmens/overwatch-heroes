@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { HeroesComponent} from "./components/heroes/heroes.component";
+import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +9,12 @@ import { HeroesComponent} from "./components/heroes/heroes.component";
 
 export class AppComponent {
   title = 'Overwatch Heroes';
+
+  constructor(private router: Router) {
+
+  }
+
+  goToHome() {
+    this.router.navigateByUrl('')
+  }
 }

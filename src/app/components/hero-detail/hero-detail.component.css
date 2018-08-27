@@ -21,4 +21,17 @@
   font-size: 75%;
 }
 
+.button {
+  background-color: #fa9c1e; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 0;
+  font-size: 75%;
+  justify-self: right;
+}
+
 

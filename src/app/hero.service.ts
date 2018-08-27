@@ -17,36 +17,12 @@ export class HeroService {
     return this.http
       .get('https://overwatch-api.net/api/v1/hero')
       .toPromise();
+  }
 
-    /*return [
-      {name: 'Lucio', class: 'Support'},
-      {name: 'Ana', class: 'Support'},
-      {name: 'Mercy', class: 'Support'},
-      {name: 'Bischuitta', class: 'Support'},
-      {name: 'Zenyatta', class: 'Support'},
-      {name: 'Moira', class: 'Support'},
-      {name: 'Reinhardt', class: 'Tank'},
-      {name: 'Zarya', class: 'Tank'},
-      {name: 'Roadhog', class: 'Tank'},
-      {name: 'Orisa', class: 'Tank'},
-      {name: 'D.va', class: 'Tank'},
-      {name: 'Winston', class: 'Tank'},
-      {name: 'Bastion', class: 'Damage'},
-      {name: 'Doomfist', class: 'Damage'},
-      {name: 'Genji', class: 'Damage'},
-      {name: 'Hanzo', class: 'Damage'},
-      {name: 'Junkrat', class: 'Damage'},
-      {name: 'Mccree', class: 'Damage'},
-      {name: 'Mei', class: 'Damage'},
-      {name: 'Phara', class: 'Damage'},
-      {name: 'Reaper', class: 'Damage'},
-      {name: 'Soldier', class: 'Damage'},
-      {name: 'Sombra', class: 'Damage'},
-      {name: 'Symmetra', class: 'Damage'},
-      {name: 'Toblerone', class: 'Damage'},
-      {name: 'Tracer', class: 'Damage'},
-      {name: 'Widowmaker', class: 'Damage'},
-    ]*/
+  getHero(id:number): Promise<any>{
+    return this.http
+      .get('https://overwatch-api.net/api/v1/hero/' + id)
+      .toPromise();
   }
 
   static getHeroImages(): string[] {

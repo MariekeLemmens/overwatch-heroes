@@ -11,6 +11,8 @@ export class HeroComponent implements OnInit {
   @Input() hero: Hero;
   @Output() heroSelected: EventEmitter<number> = new EventEmitter();
 
+ // hero:Hero
+
   constructor() {
   }
 

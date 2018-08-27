@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Hero} from "../../hero";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'hero-detail',
@@ -9,9 +10,13 @@ import {Hero} from "../../hero";
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  infoClicked(id:number){
+    this.router.navigateByUrl('/hero/' + id);
   }
 }

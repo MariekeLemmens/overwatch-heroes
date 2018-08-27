@@ -25,7 +25,7 @@ export class HeroService {
       .toPromise();
   }
 
-  static getHeroImages(): string[] {
+  getHeroImages(): string[] {
     return [
       "https://www.eclypsia.com/content/Overwatch/Ic%C3%B4nes%20h%C3%A9ros/ana_icon.png",
       "https://vignette.wikia.nocookie.net/overwatch/images/1/1e/Icon-portrait-hexagon.07nsM.png",

@@ -15,4 +15,5 @@ export class Hero {
   difficulty: number;
   role: Role;
   image: string;
+  icon: string;
 }

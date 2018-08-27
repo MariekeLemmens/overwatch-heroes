@@ -28,7 +28,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroImages() {
-    let images = HeroService.getHeroImages();
+    let images = this.heroService.getHeroImages();
     for (let hero in this.heroes) {
       this.heroes[hero].image = images[hero]
     }

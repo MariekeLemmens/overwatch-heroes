@@ -246,7 +246,7 @@ var HeroDetailComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#hero-container {\r\n  height: 100vh;\r\n  display: block;\r\n  padding: 10px 10%;\r\n  background-color: rgba(118, 120, 122, 0.53);\r\n}\r\n\r\n\r\n#hero-description{\r\n  display: flex;\r\n}\r\n\r\n\r\n#hero-images {\r\n  display: flex;\r\n}\r\n\r\n\r\n#hero-info{\r\n  display: flex;\r\n}\r\n\r\n\r\n.info {\r\n  padding: 20px;\r\n}\r\n"
 
 /***/ }),
 
@@ -257,7 +257,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>{{hero.name}}</div>\n<div>{{hero.description}}</div>\n<div>{{hero.role.name}}</div>\n"
+module.exports = "<div id=\"hero-container\">\n  <div id=\"hero-description\">\n    <div id=\"hero-images\">\n      <img src=\"{{hero.image}}\" alt=\"hero-image\">\n      <img height=\"50px\" width=\"50px\" src=\"{{hero.icon}}\" alt=\"hero-role\" id=\"role-icon\">\n    </div>\n    <div>\n      <div>{{hero.name}} ({{hero.real_name}})</div>\n      <div>{{hero.description}}</div>\n    </div>\n\n  </div>\n\n  <div id=\"hero-info\">\n    <div id=\"general-info\" class=\"info\">\n      <div>age: {{hero.age}}</div>\n      <div>height: {{hero.height}}</div>\n      <div>affiliation: {{hero.affiliation}}</div>\n      <div>base of operations: {{hero.base_of_operations}}</div>\n    </div>\n\n    <div id=\"specific-info\" class=\"info\">\n      <div>health: {{hero.health}}</div>\n      <div>armour: {{hero.armour}}</div>\n      <div>shield: {{hero.shield}}</div>\n      <div>difficulty: {{hero.difficulty}}</div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -296,6 +296,25 @@ var HeroPageComponent = /** @class */ (function () {
         var id = this.route.snapshot.params.id;
         this.heroService.getHero(id).then(function (resp) {
             _this.hero = resp;
+            _this.hero.image = _this.heroService.getHeroImages()[id - 1];
+            switch (_this.hero.role.id) {
+                case 1: {
+                    _this.hero.icon = "https://png.icons8.com/ios/100/2980b9/sword-filled.png";
+                    break;
+                }
+                case 2: {
+                    _this.hero.icon = "https://png.icons8.com/ios/100/2980b9/sword-filled.png";
+                    break;
+                }
+                case 3: {
+                    _this.hero.icon = "https://png.icons8.com/ios-glyphs/40/2980b9/shield.png";
+                    break;
+                }
+                case 4: {
+                    _this.hero.icon = "https://png.icons8.com/flat_round/100/2980b9/plus.png";
+                    break;
+                }
+            }
         });
     };
     HeroPageComponent = __decorate([
@@ -453,7 +472,7 @@ var HeroesComponent = /** @class */ (function () {
         });
     };
     HeroesComponent.prototype.getHeroImages = function () {
-        var images = _hero_service__WEBPACK_IMPORTED_MODULE_1__["HeroService"].getHeroImages();
+        var images = this.heroService.getHeroImages();
         for (var hero in this.heroes) {
             this.heroes[hero].image = images[hero];
         }
@@ -530,7 +549,7 @@ var HeroService = /** @class */ (function () {
             .get('https://overwatch-api.net/api/v1/hero/' + id)
             .toPromise();
     };
-    HeroService.getHeroImages = function () {
+    HeroService.prototype.getHeroImages = function () {
         return [
             "https://www.eclypsia.com/content/Overwatch/Ic%C3%B4nes%20h%C3%A9ros/ana_icon.png",
             "https://vignette.wikia.nocookie.net/overwatch/images/1/1e/Icon-portrait-hexagon.07nsM.png",

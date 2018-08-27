@@ -1,3 +1,29 @@
-<div>{{hero.name}}</div>
-<div>{{hero.description}}</div>
-<div>{{hero.role.name}}</div>
+<div id="hero-container">
+  <div id="hero-description">
+    <div id="hero-images">
+      <img src="{{hero.image}}" alt="hero-image">
+      <img height="50px" width="50px" src="{{hero.icon}}" alt="hero-role" id="role-icon">
+    </div>
+    <div>
+      <div>{{hero.name}} ({{hero.real_name}})</div>
+      <div>{{hero.description}}</div>
+    </div>
+
+  </div>
+
+  <div id="hero-info">
+    <div id="general-info" class="info">
+      <div>age: {{hero.age}}</div>
+      <div>height: {{hero.height}}</div>
+      <div>affiliation: {{hero.affiliation}}</div>
+      <div>base of operations: {{hero.base_of_operations}}</div>
+    </div>
+
+    <div id="specific-info" class="info">
+      <div>health: {{hero.health}}</div>
+      <div>armour: {{hero.armour}}</div>
+      <div>shield: {{hero.shield}}</div>
+      <div>difficulty: {{hero.difficulty}}</div>
+    </div>
+  </div>
+</div>

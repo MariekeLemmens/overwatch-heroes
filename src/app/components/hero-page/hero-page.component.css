@@ -1,0 +1,23 @@
+#hero-container {
+  height: 100vh;
+  display: block;
+  padding: 10px 10%;
+  background-color: rgba(118, 120, 122, 0.53);
+}
+
+
+#hero-description{
+  display: flex;
+}
+
+#hero-images {
+  display: flex;
+}
+
+#hero-info{
+  display: flex;
+}
+
+.info {
+  padding: 20px;
+}
